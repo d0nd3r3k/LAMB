@@ -10,20 +10,6 @@ var serialPort = new SerialPort("/dev/ttyACM0", {
     parser: serialport.parsers.readline("\n")
 });
 
-serialPort.open(function(err) {
-  if (err) console.log('failed to open: '+err);
-  else {
-    console.log('open');
-    serialPort.on('data', function(data) {
-      console.log(data);
-    });
-    serialPort.write('49', function(err, result){
-        if(err) console.log(err)
-        else
-            console.log(result);
-    })
-  }
-});
     var username = config.email;
     var password = config.password;
 
@@ -51,6 +37,20 @@ serialPort.open(function(err) {
                 var id = data.id[0].split(":")[2];
                 msgID = id;
                 if(intID !== msgID && intID!==0 && msgID!==0){
+                    serialPort.open(function(err) {
+                      if (err) console.log('failed to open: '+err);
+                      else {
+                        console.log('open');
+                        serialPort.on('data', function(data) {
+                          console.log(data);
+                        });
+                        serialPort.write(1, function(err, result){
+                            if(err) console.log(err)
+                            else
+                                console.log(result);
+                        })
+                      }
+                    });
                     console.log("You got mail!");
                     console.log(data);
 
