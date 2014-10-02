@@ -11,6 +11,7 @@
   "dependencies": {
     "request": "~2.44.0",
     "xml2js": "~0.4.4",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "serialport": "~1.4.6"
   }
 }
