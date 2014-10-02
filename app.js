@@ -10,7 +10,8 @@ function checkMail(callback){
         if(error)console.log(error);
         var xml = body;
         parseString(xml, function (err, result) {
-            if (result.feed !== undefined){
+            if(err) console.log(err);
+            if (result !== undefined){
                 var msgs = result.feed.entry;
                 _.each(msgs, function(msg, i){
                     var id = msg.id[0];
