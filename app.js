@@ -57,7 +57,7 @@ setInterval(function () {
 
             sp.on('data', function(data) {
                 console.log(data+"\n");
-                if (data == "PLAY"){
+                if (data == "P"){
                     console.log ("New email from "+authorName+". Subject "+title);
                 }
             });
