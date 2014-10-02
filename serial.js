@@ -25,6 +25,7 @@ serialPort.on("open", function () {
           console.log('command not successful');
       }
   });
+  
 
     setTimeout(function() {
       console.log("waiting...");
