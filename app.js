@@ -11,7 +11,7 @@ var macSerial = "/dev/tty.usbmodem1431";
 var piSerial = "/dev/ttyACM0";
 
 var sp = new SerialPort(piSerial, {
-  baudrate:9600,  
+  baudrate:9600,
   parser: serialport.parsers.readline("\n")
 });
 
@@ -56,6 +56,7 @@ setInterval(function () {
                 sp.write("MIT#");
 
             sp.on('data', function(data) {
+                console.log(data+"\n");
                 if (data == "PLAY"){
                     console.log ("New email from "+authorName+". Subject "+title);
                 }
