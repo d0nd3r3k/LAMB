@@ -10,6 +10,8 @@ var password = config.password;
 
 child = exec("node serial.js MIT#", function (err, stdout, stderr) {
     console.log(stdout);
+    if(err) console.log(err);
+    if(stderr) console.log(stderr);
 })
 
 function checkMail(callback){
