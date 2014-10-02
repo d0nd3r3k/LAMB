@@ -6,7 +6,10 @@ var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
 
 var serialPort = new SerialPort("/dev/ttyACM0", {
-    baudrate: 9600,
+    dataBits: 8,
+    parity: 'none',
+    stopBits: 1,
+    flowControl: false,
     parser: serialport.parsers.readline("\r")
 });
 
@@ -17,7 +20,7 @@ serialPort.open(function(err) {
     serialPort.on('data', function(data) {
       console.log(data);
     });
-    serialPort.write('MIT#\r', function(err, result){
+    serialPort.write('GMAIL#\r', function(err, result){
         if(err) console.log(err)
         else
             console.log(result);
