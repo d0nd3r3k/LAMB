@@ -26,10 +26,14 @@ serialPort.on("open", function () {
       }
   });
 
-  serialPort.write(command, function(err, results) {
-    console.log('err ' + err);
-    console.log('results ' + results);
-  });
+    setTimeout(function() {
+      console.log("waiting...");
+      command = command + '#'
+    serialPort.write(command, function(err, results) {
+      console.log('err ' + err);
+      console.log('results ' + results);
+    });
+  }, 3000);
 
   serialPort.on('error', function (err) {
       console.error("error", err);
