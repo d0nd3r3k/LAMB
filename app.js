@@ -4,7 +4,7 @@ var _ = require('underscore');
 var config = require('./config');
 var username = config.email;
 var password = config.password;
-
+console.log(username+"\n"+password);
 function checkMail(callback){
     request.get("https://"+username+":"+password+"@mail.google.com/gmail/feed/atom", function(error, response, body){
         var xml = body;
