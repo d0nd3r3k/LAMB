@@ -6,7 +6,8 @@ var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
 
 var serialPort = new SerialPort("/dev/ttyACM0", {
-    baudrate: 9600
+    baudrate: 9600,
+    parser: serialport.parsers.readline("\n")
 });
 
 serialPort.open(function(err) {
@@ -14,8 +15,13 @@ serialPort.open(function(err) {
   else {
     console.log('open');
     serialPort.on('data', function(data) {
-      console.log('data received: ' + data);
+      console.log(data);
     });
+    serial.Port.write('Email from ddh@mit.edu', function(err, result){
+        if(err) console.log(err)
+        else
+            console.log(result);
+    })
   }
 });
     var username = config.email;
