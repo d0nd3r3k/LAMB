@@ -6,16 +6,18 @@ var username = config.email;
 var password = config.password;
 
 function checkMail(callback){
-    request.get("https://"+'derek.ilabz@gmail.com'+":"+password+"@mail.google.com/gmail/feed/atom", function(error, response, body){
+    request.get("https://"+username+":"+password+"@mail.google.com/gmail/feed/atom", function(error, response, body){
         if(error)console.log(error);
         var xml = body;
         parseString(xml, function (err, result) {
-            var msgs = result.feed.entry;
-            _.each(msgs, function(msg, i){
-                var id = msg.id[0];
-                if(i == 0)
-                    return callback(msg);
-            })
+            if (result.feed !== undefined){
+                var msgs = result.feed.entry;
+                _.each(msgs, function(msg, i){
+                    var id = msg.id[0];
+                    if(i == 0)
+                        return callback(msg);
+                })
+            }
         });
     })
 }
@@ -31,4 +33,4 @@ setInterval(function () {
         }
     })
     intID=msgID;
-}, 5000);
+}, 2000);
