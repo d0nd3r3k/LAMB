@@ -8,11 +8,14 @@ var child;
 var username = config.email;
 var password = config.password;
 
-child = exec("node serial.js Gmail#", function (err, stdout, stderr) {
-    console.log(stdout);
-    if(err) console.log(err);
-    if(stderr) console.log(stderr);
-})
+function trigger(cmd){
+        child = exec("node serial.js "+cmd+"#", function (err, stdout, stderr) {
+            console.log(stdout);
+            if(err) console.log(err);
+            if(stderr) console.log(stderr);
+        })
+}
+
 
 function checkMail(callback){
     request.get("https://"+username+":"+password+"@mail.google.com/gmail/feed/atom", function(error, response, body){
@@ -39,7 +42,11 @@ function checkMail(callback){
             msgID = id;
             if(intID !== msgID && intID!==0 && msgID!==0){
                 console.log("You got mail!");
-                console.log(data);
+                var emailType = data.author[0].email[0].split('@')[1];
+                if(emailType == "gmail.com")
+                    trigger("Gmail");
+                if(emailType == "mit.edu" || emailType == "media.mit.edu" )
+                    trigger("MIT");
 
             }
         })
