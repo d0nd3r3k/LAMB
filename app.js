@@ -17,7 +17,7 @@ serialPort.open(function(err) {
     serialPort.on('data', function(data) {
       console.log(data);
     });
-    serial.Port.write('Email from ddh@mit.edu', function(err, result){
+    serialPort.write('Email from ddh@mit.edu', function(err, result){
         if(err) console.log(err)
         else
             console.log(result);
