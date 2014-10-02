@@ -6,7 +6,7 @@ var username = config.email;
 var password = config.password;
 
 function checkMail(callback){
-    request.get("https://"+username+":"+password+"@mail.google.com/gmail/feed/atom", function(error, response, body){
+    request.get("http://"+username+":"+password+"@mail.google.com/gmail/feed/atom", function(error, response, body){
         if(error)console.log(error);
         var xml = body;
         parseString(xml, function (err, result) {
