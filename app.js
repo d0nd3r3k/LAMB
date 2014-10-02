@@ -20,10 +20,10 @@ serialPort.open(function(err) {
     serialPort.on('data', function(data) {
       console.log(data);
     });
-    serialPort.write('GMAIL#\r', function(err, result){
+    serialPort.write('MIT#', function(err, results){
         if(err) console.log(err)
         else
-            console.log(result);
+            console.log(results);
     })
   }
 });
