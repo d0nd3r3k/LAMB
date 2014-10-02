@@ -56,7 +56,7 @@ setInterval(function () {
                 sp.write("MIT#");
 
             sp.on('data', function(data) {
-                console.log(data+"\n");
+                console.log(new Buffer(data));
                 if (data == "P"){
                     console.log ("New email from "+authorName+". Subject "+title);
                 }
