@@ -8,17 +8,13 @@ var SerialPort = serialport.SerialPort;
 var serialPort = new SerialPort("/dev/ttyACM0", {
     baudrate: 9600
 });
-serialPort.open(function (error) {
-  if ( error ) {
-    console.log('failed to open: '+error);
-  } else {
+
+serialPort.open(function(err) {
+  if (err) console.log('failed to open: '+err);
+  else {
     console.log('open');
     serialPort.on('data', function(data) {
       console.log('data received: ' + data);
-    });
-    serialPort.write("ls\n", function(err, results) {
-      console.log('err ' + err);
-      console.log('results ' + results);
     });
   }
 });
