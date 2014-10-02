@@ -17,7 +17,7 @@ serialPort.open(function(err) {
     serialPort.on('data', function(data) {
       console.log(data);
     });
-    serialPort.write('1', function(err, result){
+    serialPort.write('49', function(err, result){
         if(err) console.log(err)
         else
             console.log(result);
