@@ -1,8 +1,9 @@
 var request = require('request');
 var parseString = require('xml2js').parseString;
 var _ = require('underscore');
-var username = "you@gmail.com";
-var password = "password";
+var config = require('./config');
+var username = config.email;
+var password = config.password;
 
 function checkMail(callback){
     request.get("https://"+username+":"+password+"@mail.google.com/gmail/feed/atom", function(error, response, body){
