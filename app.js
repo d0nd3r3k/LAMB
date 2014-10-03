@@ -64,10 +64,6 @@ setInterval(function () {
                     //espeak -ven+m2 -k1 -s120
                     var speak = "\'New email from "+authorName+". Subject "+title+"\'";
                     var espeak = spawn('espeak', ['-ven+m2','-k1','-s120',speak]);
-                    child = exec("espeak  "+, function (err, stdout, stderr) {
-
-                    })
-
                 }
             });
         }
