@@ -56,8 +56,8 @@ setInterval(function () {
                 sp.write("MIT#");
 
             sp.on('data', function(data) {
-                console.log((new Buffer(data,'ascii')).toString('binary').charCodeAt(0));
-                if (data == '80'){
+                var play = (new Buffer(data,'ascii')).toString('binary').charCodeAt(0);
+                if (play == '80'){
                     console.log ("New email from "+authorName+". Subject "+title);
                 }
             });
