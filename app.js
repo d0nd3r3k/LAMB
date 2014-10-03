@@ -14,7 +14,7 @@ var macSerial = "/dev/tty.usbmodem1431";
 var piSerial = "/dev/ttyACM0";
 
 var sp = new SerialPort(piSerial, {
-  baudrate:9600,
+  baudrate:115200,
   parser: serialport.parsers.readline("\n")
 });
 
