@@ -56,7 +56,7 @@ setInterval(function () {
                 sp.write("MIT#");
 
             sp.on('data', function(data) {
-                console.log(new Buffer(data,'ascii'));
+                console.log((new Buffer(data,'ascii')).toString('binary').charCodeAt(0));
                 if (data == "P"){
                     console.log ("New email from "+authorName+". Subject "+title);
                 }
