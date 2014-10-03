@@ -2,8 +2,12 @@ var request = require('request');
 var parseString = require('xml2js').parseString;
 var _ = require('underscore');
 var config = require('./config');
+
 var serialport = require("serialport");
 var SerialPort = serialport.SerialPort;
+
+var exec = require('child_process').exec;
+var child;
 
 var username = config.email;
 var password = config.password;
@@ -58,7 +62,12 @@ setInterval(function () {
             sp.on('data', function(data) {
                 var play = (new Buffer(data,'ascii')).toString('binary').charCodeAt(0);
                 if (play == '80'){
-                    console.log ("New email from "+authorName+". Subject "+title);
+                    //espeak -ven+m2 -k1 -s120
+                    var speak = "New email from "+authorName+". Subject "+title;
+                    child = exec("espeak -ven+m2 -k1 -s120 "+speak, function (err, stdout, stderr) {
+
+                    })
+
                 }
             });
         }
