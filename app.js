@@ -57,21 +57,20 @@ setInterval(function () {
                 sp.write("Gmail#");
             if(emailType == "mit.edu" || emailType == "media.mit.edu" )
                 sp.write("MIT#");
-            var speak = "\'New email from "+authorName+". Subject "+title+"\'";
-            var espeak = spawn('espeak', ['-ven+m2','-k1','-s120',speak]);
-            /*sp.on('data', function(data) {
+
+            sp.on('data', function(data) {
                 console.log(data);
                 var play = (new Buffer(data,'ascii')).toString('binary').charCodeAt(0);
                 if (play == '80'){
                     //espeak -ven+m2 -k1 -s120
                     var speak = "\'New email from "+authorName+". Subject "+title+"\'";
                     console.log(speak);
-
+                    var espeak = spawn('espeak', ['-ven+m2','-k1','-s120',speak]);
                     espeak.on('close', function (code) {
                         console.log('child process exited with code ' + code);
                     });
                 }
-            });*/
+            });
         }
     })
     intID=msgID;
