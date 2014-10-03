@@ -57,7 +57,7 @@ setInterval(function () {
 
             sp.on('data', function(data) {
                 console.log((new Buffer(data,'ascii')).toString('binary').charCodeAt(0));
-                if (data == "P"){
+                if (data == 80){
                     console.log ("New email from "+authorName+". Subject "+title);
                 }
             });
