@@ -11,7 +11,7 @@ var spawn = require('child_process').spawn;
 var username = config.email;
 var password = config.password;
 var macSerial = "/dev/tty.usbmodem1431";
-var piSerial = "/dev/ttyACM1";
+var piSerial = "/dev/ttyACM0";
 
 var sp = new SerialPort(piSerial, {
   baudrate:9600,
