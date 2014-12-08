@@ -1,11 +1,12 @@
-###LAMB
+##LAMB - Literally a MailBox
 Built at MIT Media Lab by Sarah Platte, Kehang Han and Donald Derek for the MS.500 foundation course - Module 1.
 
-Install node.js on Raspberry Pi [here](https://github.com/DonaldDerek/rPi-cheat-sheet)
+###Install & Run
 
-Make sure to edit the basic script with your email and password.
++ Install node.js on Raspberry Pi [here](https://github.com/DonaldDerek/rPi-cheat-sheet)
++ Make sure to edit the basic script with your email and password.
++ Make sure to run PiTalk.ino on your Arduino, following the blueprint below:
 
-Make sure to run PiTalk.ino on your Arduino, following the blueprint below:
 <img src="https://raw.githubusercontent.com/DonaldDerek/LAMB/master/blueprint.png" width="640" height="480" />
 
 Run the project
