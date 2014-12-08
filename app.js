@@ -10,10 +10,10 @@ var spawn = require('child_process').spawn;
 
 var username = config.email;
 var password = config.password;
-var macSerial = "/dev/tty.usbmodem1431";
+var macSerial = "/dev/tty.usbmodem1411";
 var piSerial = "/dev/ttyACM0";
 
-var sp = new SerialPort(piSerial, {
+var sp = new SerialPort(macSerial, {
   baudrate:115200,
   parser: serialport.parsers.readline("\n")
 });
@@ -65,7 +65,8 @@ setInterval(function () {
                     //espeak -ven+m2 -k1 -s120
                     var speak = "\'New email from "+authorName+". Subject "+title+"\'";
                     console.log(speak);
-                    var espeak = spawn('espeak', ['-ven+m2','-k1','-s120',speak]);
+                    //var espeak = spawn('espeak', ['-ven+m2','-k1','-s120',speak]);
+                    var espeak = spawn('say', [speak]);
                     espeak.on('close', function (code) {
                         console.log('child process exited with code ' + code);
                     });
