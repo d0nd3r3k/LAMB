@@ -1,5 +1,5 @@
 ###LAMB
-Developed at MIT Media Lab for the MS.500 foundation course.
+Built at MIT Media Lab by Sarah Platte, Kehang Han and Donald Derek for the MS.500 foundation course - Module 1.
 
 Install node.js on Raspberry Pi [here](https://github.com/DonaldDerek/rPi-cheat-sheet)
 

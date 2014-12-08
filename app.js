@@ -8,6 +8,7 @@ var SerialPort = serialport.SerialPort;
 
 var spawn = require('child_process').spawn;
 
+//Use config file to importa email and password, if not you can still hardcode it here.
 var username = config.email;
 var password = config.password;
 var macSerial = "/dev/tty.usbmodem1411";
