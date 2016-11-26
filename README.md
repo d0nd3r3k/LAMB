@@ -1,5 +1,5 @@
 ##LAMB - Literally a MailBox
-Built at MIT Media Lab by Sarah Platte, Kehang Han and Donald Derek for the MS.500 foundation course - Module 1.
+Built at MIT Media Lab by Sarah Platte, Kehang Han and Don Derek for the MS.500 foundation course - Module 1.
 
 ###Install & Run
 
